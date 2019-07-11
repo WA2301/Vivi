@@ -1,0 +1,708 @@
+00000000 a *ABS*
+33f00000 T ResetEntryPoint
+33f00000 T _start
+33f00004 t UndefEntryPoint
+33f00008 t SWIEntryPoint
+33f0000c t PrefetchAbortEnteryPoint
+33f00010 t DataAbortEntryPoint
+33f00014 t NotUsedEntryPoint
+33f00018 t IRQEntryPoint
+33f0001c t FIQEntryPoint
+33f00038 t Reset
+33f000f0 t on_the_ram
+33f00104 t WakeupStart
+33f00138 t SleepRamProc
+33f00178 T memsetup
+33f0019c t copy_myself
+33f00208 t ok_nand_read
+33f00214 t go_next
+33f00230 t notmatch
+33f00234 t done_nand_read
+33f00238 t mem_clear
+33f00258 t clear_loop
+33f00268 t InitUART
+33f002a8 t HandleUndef
+33f002ac t HandleSWI
+33f002b0 t HandlePrefetchAbort
+33f002b4 t HandleDataAbort
+33f002b8 t HandleIRQ
+33f002bc t HandleFIQ
+33f002c0 t HandleNotUsed
+33f002d0 t mem_cfg_val
+33f00310 t clock_locktime
+33f00314 t mpll_50mhz
+33f00318 t mpll_200mhz
+33f0031c t clock_clkcon
+33f00320 t clock_clkdivn
+33f00324 t uart_ulcon
+33f00328 t uart_ucon
+33f0032c t uart_ufcon
+33f00330 t uart_umcon
+33f00334 t gpio_con_uart
+33f00338 t gpio_up_uart
+33f0033c t DW_STACK_START
+33f00340 t SerBase
+33f00350 t PMCTL0_ADDR
+33f00354 t PMCTL1_ADDR
+33f00358 t PMST_ADDR
+33f0035c t PMSR0_ADDR
+33f00360 t REFR_ADDR
+33f00380 t gcc2_compiled.
+33f00380 T nand_read_ll
+33f0047c T wait_idle
+33f004ac T cache_clean_invalidate
+33f004ac t gcc2_compiled.
+33f004d8 T tlb_invalidate
+33f004e8 T mmu_init
+33f00530 T mem_map_nand_boot
+33f005bc T mem_map_init
+33f005d0 t gcc2_compiled.
+33f005d0 t set_cpu_clk
+33f00658 t get_bus_clk
+33f0071c t print_cpu_info
+33f0085c t change_baudrate
+33f008d0 T change_sys_clks
+33f00918 T change_uart_baudrate
+33f0092c T get_clock_tick_rate
+33f00988 t time_wait
+33f00aa4 t time_delay
+33f00ad8 T arch_udelay
+33f00ae0 T arch_mdelay
+33f00ae8 T init_time
+33f00af8 T processor_reset
+33f00b30 T command_reset
+33f00b80 t display_cpu_help
+33f00bc4 t command_cpu
+33f00cc8 t gcc2_compiled.
+33f00cc8 T set_vpp
+33f00ccc T set_gpios
+33f00e04 T board_init
+33f00e18 T misc
+33f00e40 t gcc2_compiled.
+33f00e40 T vivi_shell
+33f00e44 T run_autoboot
+33f00e80 t error
+33f00ea8 T boot_or_vivi
+33f00f44 T main
+33f00fec T call_linux
+33f00fec t gcc2_compiled.
+33f00fec t gcc2_compiled.
+33f01040 t setup_linux_param
+33f010d8 T boot_kernel
+33f012b8 T command_boot
+33f01658 t gcc2_compiled.
+33f01658 T heap_init
+33f016bc t compact_heap
+33f016c4 T mmalloc
+33f017d0 T mfree
+33f017f8 T clear_mem
+33f017f8 t gcc2_compiled.
+33f0183c T find_dram_size
+33f018f8 T probe_dram_size
+33f0193c T mem_compare
+33f019c8 t mem_copy
+33f01a04 t search_value
+33f01a60 T print_mem_map
+33f01b38 T print_mem_ctrl_regs
+33f01cbc t mem_info
+33f01ce8 t command_mem_info
+33f01cec t command_mem_set_regs
+33f01cf0 T command_mem_copy
+33f01dc4 T command_mem_compare
+33f01eac T command_search
+33f01fb0 T command_size
+33f01fb4 T command_mem
+33f02108 t gcc2_compiled.
+33f02108 T parseargs
+33f0223c T unparseargs
+33f022a0 T add_command
+33f022f8 T find_cmd
+33f02360 T execcmd
+33f023c4 T exec_string
+33f02430 T execsubcmd
+33f024b8 T print_usage
+33f02538 T invalid_cmd
+33f0257c T command_help
+33f02644 T command_dump
+33f02694 T init_builtin_cmds
+33f0275c t call
+33f0275c t gcc2_compiled.
+33f02800 t jump
+33f02838 t go
+33f0290c T exec
+33f02b1c T command_call
+33f02b24 T command_go
+33f02b2c t gcc2_compiled.
+33f02b2c t gcc2_compiled.
+33f02b2c t skip_atoi
+33f02b98 T strnlen
+33f02bd8 t number
+33f02f64 T vsnprintf
+33f036f4 T printk
+33f03774 t gcc2_compiled.
+33f03774 T hex_dump
+33f03914 T bsd_sum_memory
+33f03968 T progress_bar
+33f03a7c T print_banner
+33f03af0 T print_cap
+33f03b68 T print_disk_size
+33f03c04 t gcc2_compiled.
+33f03c04 t modem_is
+33f03c8c t download_file
+33f03d30 T command_load
+33f03fb8 t gcc2_compiled.
+33f03fb8 T u32todecimal
+33f04060 T binarytohex
+33f040f0 T strtoul
+33f041c4 T putnstr
+33f04208 T putstr
+33f04224 T putstr_hex
+33f04278 t gcc2_compiled.
+33f04278 T udelay
+33f0427c T mdelay
+33f04280 T do_getc_with_timeout
+33f04280 t gcc2_compiled.
+33f042d8 T do_getc
+33f043cc T getc
+33f043fc T putc
+33f04428 T awaitkey
+33f04448 t gcc2_compiled.
+33f04448 t hist_init
+33f044e4 t cread_add_to_hist
+33f0456c t hist_prev
+33f045f0 t hist_next
+33f04688 t cread_print_hist_list
+33f0471c t cread_add_char
+33f04808 t cread_add_str
+33f04860 t cread_line
+33f04e10 T getcmd
+33f04e68 t gcc2_compiled.
+33f04e68 T serial_term
+33f04ec8 T bufputs
+33f04ec8 t gcc2_compiled.
+33f04f38 T reset_debugbuf
+33f04f78 T xmodem_receive
+33f051b4 T get_record
+33f052c4 T get_byte
+33f053f0 T find_erase_size
+33f053f0 t gcc2_compiled.
+33f055dc t do_format_jffs2
+33f05678 t nor_unlock
+33f056f8 t nor_lock
+33f05778 t nor_erase
+33f057e0 t nor_write
+33f05898 t nor_verify
+33f05938 t write_to_nor
+33f05b3c t write_to_nand
+33f05ccc T write_to_flash
+33f05d8c t command_erase
+33f05edc t command_lock
+33f05fb8 t command_unlock
+33f06094 t command_info
+33f0612c t command_help
+33f0615c T command_flash
+33f061e0 T mtd_dev_init
+33f061ec t gcc2_compiled.
+33f061ec t smc_hwcontrol
+33f06244 t write_cmd
+33f06258 t write_addr
+33f0626c t read_data
+33f06280 t write_data
+33f06294 t wait_for_ready
+33f062c8 t smc_init
+33f06444 T mtd_init
+33f06478 T smc_insert
+33f064f0 t gcc2_compiled.
+33f064f0 t nand_trans_result
+33f065a8 T nand_calculate_ecc
+33f06658 T nand_correct_data
+33f0680c t gcc2_compiled.
+33f0680c t nand_command
+33f0697c t nand_read
+33f06b7c t nand_read_ecc
+33f06e84 t nand_read_oob
+33f06f48 t nand_write
+33f072b4 t nand_write_ecc
+33f0751c t nand_write_oob
+33f076a0 t nand_erase
+33f07830 T smc_scan
+33f07a6c T smc_read_ecc_512
+33f07b7c t gcc2_compiled.
+33f07b7c t mark_bad
+33f07bcc t is_bad_block
+33f07cb8 T check_bad_block
+33f07eb8 t calc_ecc
+33f07ec8 t write_oob
+33f07f64 t write_block
+33f08018 T write_bon_image
+33f082fc T read_bon_partition
+33f084e8 T read_size
+33f08580 T read_flag
+33f085d0 T write_partition
+33f0889c T write_partition_table
+33f08a1c T display_partition_table
+33f08b4c t display_help
+33f08b90 t command_part
+33f08d10 T command_bon
+33f08d90 t gcc2_compiled.
+33f08d90 T get_default_mtd_partition
+33f08e40 T get_default_param_tlb
+33f08ee8 T get_default_linux_cmd
+33f08f58 T save_priv_data_blk
+33f08fcc T read_saved_priv_data_blk
+33f09024 T load_saved_priv_data
+33f0912c T init_priv_data
+33f091ec t gcc2_compiled.
+33f091ec T get_param
+33f09278 T get_param_value
+33f092a4 T set_param_value
+33f092c8 T display_param_tlb
+33f09390 T get_linux_cmd_line
+33f093e4 T set_linux_cmd_line
+33f09424 T command_param
+33f09480 t command_help
+33f094b0 t command_set
+33f095f8 t command_reset_tlb
+33f09640 t command_show
+33f09644 t command_save
+33f096b0 t gcc2_compiled.
+33f096b0 T get_mtd_partition
+33f0974c T find_mtd_partition
+33f097b4 T add_mtd_partition
+33f09814 T del_mtd_partition
+33f09904 T reset_mtd_partition
+33f09910 T display_mtd_partition
+33f099e4 t parse_flags
+33f09ad8 t command_add
+33f09c00 t command_del
+33f09c78 t command_reset
+33f09cb8 t command_save
+33f09cf8 t command_show
+33f09d38 t command_help
+33f09d68 T command_part
+33f09dc0 T __ashrdi3
+33f09dc0 t gcc2_compiled.
+33f09df8 T __divsi3
+33f09e20 t Loop1
+33f09e34 t Lbignum
+33f09e48 t Loop3
+33f09e88 t Lgot_result
+33f09e98 t Ldiv0
+33f09ea8 T __div0
+33f09ec4 T __modsi3
+33f09ee8 t Loop1
+33f09efc t Lbignum
+33f09f10 t Loop3
+33f09f74 t Lgot_result
+33f09f84 t Ldiv0
+33f09f94 T __udivsi3
+33f09fac t Loop1
+33f09fc0 t Lbignum
+33f09fd4 t Loop3
+33f0a014 t Lgot_result
+33f0a01c t Ldiv0
+33f0a02c T __umodsi3
+33f0a040 t Loop1
+33f0a054 t Lbignum
+33f0a068 t Loop3
+33f0a0d0 t Ldiv0
+33f0a0e0 T strcat
+33f0a114 W index
+33f0a114 T strchr
+33f0a1fc T strcmp
+33f0a234 T strcpy
+33f0a260 T strlen	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/strcpy.c:49
+33f0a288 t Laligned	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/strcpy.c:49
+33f0a2a4 t Llastword	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/strcpy.c:49
+33f0a2c0 T strncmp
+33f0a3b0 T strncpy
+33f0a488 T memmove
+33f0a5d0 T memset	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/memmove.c:108
+33f0a670 T memcpy
+33f0a714 T _wordcopy_fwd_aligned
+33f0a81c T _wordcopy_fwd_dest_aligned
+33f0a904 T _wordcopy_bwd_aligned
+33f0aa28 T _wordcopy_bwd_dest_aligned
+33f0ab18 d mmu_tlb_base	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ab1c D s3c2410_clks	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0accc D reset_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0acdc D cpu_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0acec D default_mtd_partitions	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ad5c D default_nb_part	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ad60 D default_vivi_parameters	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ae80 D default_nb_params	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ae84 D linux_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0aebc D vivi_banner	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0aec0 D boot_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0aed0 d gHeapBase	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0aed4 d mem_cmds	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af1c D mem_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af2c d head_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af30 d tail_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af34 D help_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af44 D dump_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af54 D go_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af64 D call_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0af74 D _ctype	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b074 D load_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b084 d hex_to_ascii_table	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b094 D getc_errno	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b098 d hist_max	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b09c d hist_add_idx	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0a0 d hist_cur	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0a4 D hist_num	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0a8 d initted.66	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0ac D prompt	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0bc D xmodem_errtxt	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0c0 D get_byte_err	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0c4 d seen_a_char	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0c8 d one_nak	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0cc d xmodem_timeout	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0d0 D db_idx	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0d4 D mymtd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b0d8 d flash_cmds	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b120 d flash_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b130 d nand_flash_ids	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b310 d nand_smc_info	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b450 D bon_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b460 D vivi_params	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b464 D nb_params	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b468 D linux_cmd_line	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b46c D param_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b47c d param_cmds	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b4c4 D mtd_parts	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b4c8 D nb_mtd_parts	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b4cc d part_cmds	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0b520 D part_cmd	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bb50 ? _GLOBAL_OFFSET_TABLE_	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bb5c b printk_buf.60	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bf5c B argc	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bf60 B stackedState	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bf64 B paramoldvalue	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bf70 B hist_list	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0bfc0 B hist_lines	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0d3c0 B rbuffer	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0d440 B debugbuf	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e440 B num_part	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e450 B parts	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e4b4 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e4f8 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e518 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e544 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e574 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e58c r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e5a4 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e5bc r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e5d0 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e5e4 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e614 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e628 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e634 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e658 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e6a0 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e6a8 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e6d0 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e70c r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e714 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e71c r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e720 r .LC21	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e744 r .LC22	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e774 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e77c r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e7ac r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e7c8 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e7d4 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e814 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e82c r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e830 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e854 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e870 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e90c r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e930 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e964 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e984 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e99c r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e9a0 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e9a4 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e9a8 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e9b8 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0e9e4 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ea08 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ea48 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ea50 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ea58 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ea94 r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eaac r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eab8 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eac8 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eae4 r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eb18 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eb20 r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eb48 r .LC21	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eb7c r .LC22	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eb8c r .LC23	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ebac r .LC24	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ebcc r .LC25	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec10 r .LC26	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec34 r .LC27	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec60 r .LC28	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec6c r .LC29	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec8c r .LC30	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ec94 r .LC31	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ecbc r .LC32	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ecf8 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ed28 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ed58 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ed6c r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ed84 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ed9c r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0edb4 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ede4 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ee14 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ee44 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ee68 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ee8c r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eeb0 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eec8 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eee0 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0eef8 r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef10 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef28 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef40 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef58 r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef70 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ef88 r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0efa0 r .LC21	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0efb8 r .LC22	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0efd0 r .LC23	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0efe8 r .LC24	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0effc r .LC25	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f034 r .LC26	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f068 r .LC27	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f084 r .LC28	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f0b8 r .LC29	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f0d8 r .LC30	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f100 r .LC31	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f108 r .LC32	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f140 r .LC33	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f144 r .LC34	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f174 r .LC35	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f290 r .LC46	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f294 r .LC47	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f29c r .LC48	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f2a4 r .LC49	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f2c4 r .LC50	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f2f0 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f2f4 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f314 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f34c r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f370 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f378 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f37c r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f380 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f3a8 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f3ac r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f3b4 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f3c8 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f440 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f460 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f478 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f490 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f4a8 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f4c0 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f4d4 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f4e4 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f58c r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5b4 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5dc r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5e4 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5e8 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5ec r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5f0 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5f4 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5f8 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f5fc r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f604 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f608 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f620 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f650 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f66c r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f680 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f6a0 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f6c8 r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f6e4 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f6f4 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f700 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f70c r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f714 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f718 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f71c r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f720 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f748 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f754 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f780 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f79c r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f7b4 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f7bc r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f7dc r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f7e4 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f7e8 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f81c r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f838 r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f868 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f8bc r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f8f4 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f90c r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f940 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f94c r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9bc r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9dc r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9e0 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9e4 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9e8 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0f9ec r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa08 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa10 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa20 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa38 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa44 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa4c r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa58 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa64 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa6c r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa74 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa80 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa8c r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fa98 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0faa8 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fabc r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fae8 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0faf8 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb08 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb14 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb24 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb34 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb44 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb54 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb64 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb88 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fb98 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fbc4 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fbe4 r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fbec r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fc00 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fc20 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fc3c r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fc60 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fc78 r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fcb0 r .LC21	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fcd0 r .LC22	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fce8 r .LC23	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fd10 r .LC24	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fd3c r .LC25	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fd74 r .LC26	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fd98 r .LC27	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fda4 r .LC28	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fdac r .LC29	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fde8 r .LC30	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fe10 r .LC31	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0fec0 r .LC32	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ff5c r .LC41	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ff84 r .LC42	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f0ffdc r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10010 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10048 r nand_ecc_precalc_table	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f102bc r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f102f8 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10314 R bon_part_magic	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1031c r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10328 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10340 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10350 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1035c r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1036c r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10394 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f103b8 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f103c8 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f103dc r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10400 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10428 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1043c r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10458 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1047c r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10488 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10498 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f104a8 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f104bc r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f104c4 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f104e4 r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10500 r .LC21	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1052c r .LC22	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1055c r .LC23	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1057c r .LC24	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10580 r .LC25	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10584 r .LC26	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1058c r .LC27	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1059c r .LC28	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105b4 r .LC29	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105c8 r .LC30	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105d0 r .LC31	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105d8 r .LC32	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105ec r .LC33	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f105fc r .LC34	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10608 r .LC35	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1061c r .LC36	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10624 r .LC37	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10660 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10680 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f106a4 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f106ac r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f106d0 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f106f4 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10718 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1073c r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10764 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10784 r .LC9	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107a4 R vivi_param_magic	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107ac R linux_cmd_magic	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107b4 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107d0 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107ec r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f107f4 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10834 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10848 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10860 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10890 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f108f4 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f108fc r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10934 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10944 r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10968 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f1098c r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f109a8 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f109d4 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10a04 r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10a2c r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10a38 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10a5c r .LC20	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10bb8 R mtd_part_magic	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10bc0 r .LC0	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10be0 r .LC1	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c10 r .LC2	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c44 r .LC3	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c60 r .LC4	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c64 r .LC5	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c68 r .LC6	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c70 r .LC7	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c78 r .LC8	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c84 r .LC10	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10c90 r .LC11	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10cac r .LC12	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10ce0 r .LC13	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10cfc r .LC14	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10d08 r .LC15	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10d20 r .LC16	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10d2c r .LC17	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10d38 r .LC18	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10d44 r .LC19	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412
+33f10e5c r .LC31	/tmp/cross/src/glibc-2.2.3/string/../sysdeps/generic/wordcopy.c:412

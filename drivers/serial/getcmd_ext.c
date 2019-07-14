@@ -18,15 +18,15 @@
 #include <types.h>
 #include <string.h>
 
-static int hist_max = 0;
-static int hist_add_idx = 0;
+static int hist_max = 0;	//记录该用户可能的一次性输入最大指令条数，该变量只增不减
+static int hist_add_idx = 0;//二维字符表中的行数下标，下次添加即添加到该行
 static int hist_cur = -1;
-unsigned hist_num = 0;
+unsigned hist_num = 0;//记录当前有效指令的条数，对应 HIST_MAX
 
 char* hist_list[HIST_MAX];
-char hist_lines[HIST_MAX][HIST_SIZE];
+char hist_lines[HIST_MAX][HIST_SIZE];//最多存储20条命令，应该是可以同时输入多条指令，用分号分开
 
-#define add_idx_minus_one() ((hist_add_idx == 0) ? hist_max : hist_add_idx-1)
+// #define add_idx_minus_one() ((hist_add_idx == 0) ? hist_max : hist_add_idx-1)
 
 static void 
 hist_init(void)
@@ -39,8 +39,8 @@ hist_init(void)
 	hist_num = 0;
 
 	for (i = 0; i < HIST_MAX; i++) {
-		hist_list[i] = hist_lines[i];
-		hist_list[i][0] = '\0';
+		hist_list[i] = hist_lines[i];//将各个指针指向每一行数组
+		hist_list[i][0] = '\0';      //将各行数组首个字符置0，相当于清空字符
 	}
 }
 
@@ -102,51 +102,51 @@ hist_next(void)
 	return (ret);
 }
 
-static void 
-cread_print_hist_list(void)
-{
-	int i;
-	unsigned long n;
+// static void 
+// cread_print_hist_list(void)
+// {
+// 	int i;
+// 	unsigned long n;
 
-	n = hist_num - hist_max;
+// 	n = hist_num - hist_max;
 
-	i = hist_add_idx + 1;
-	while (1) {
-		if (i > hist_max)
-			i = 0;
-		if (i == hist_add_idx)
-			break;
-		printk("%s\n", hist_list[i]);
-		n++;
-		i++;
-	}
-}
+// 	i = hist_add_idx + 1;
+// 	while (1) {
+// 		if (i > hist_max)
+// 			i = 0;
+// 		if (i == hist_add_idx)
+// 			break;
+// 		printk("%s\n", hist_list[i]);
+// 		n++;
+// 		i++;
+// 	}
+// }
 
-#define BEGINNING_OF_LINE() {			\
-	while (num) {				\
-		getcmd_putch(CTL_BACKSPACE);	\
-		num--;				\
-	}					\
-}
+// #define BEGINNING_OF_LINE() {			\
+// 	while (num) {				\
+// 		getcmd_putch(CTL_BACKSPACE);	\
+// 		num--;				\
+// 	}					\
+// }
 
-#define ERASE_TO_EOL() {				\
-	if (num < eol_num) {				\
-		int tmp;				\
-		for (tmp = num; tmp < eol_num; tmp++)	\
-			getcmd_putch(' ');		\
-		while (tmp-- > num)			\
-			getcmd_putch(CTL_BACKSPACE);	\
-		eol_num = num;				\
-	}						\
-}
+// #define ERASE_TO_EOL() {				\
+// 	if (num < eol_num) {				\
+// 		int tmp;				\
+// 		for (tmp = num; tmp < eol_num; tmp++)	\
+// 			getcmd_putch(' ');		\
+// 		while (tmp-- > num)			\
+// 			getcmd_putch(CTL_BACKSPACE);	\
+// 		eol_num = num;				\
+// 	}						\
+// }
 
-#define REFRESH_TO_EOL() {			\
-	if (num < eol_num) {			\
-		wlen = eol_num - num;		\
-		putnstr(buf + num, wlen);	\
-		num = eol_num;			\
-	}					\
-}	
+// #define REFRESH_TO_EOL() {			\
+// 	if (num < eol_num) {			\
+// 		wlen = eol_num - num;		\
+// 		putnstr(buf + num, wlen);	\
+// 		num = eol_num;			\
+// 	}					\
+// }	
 
 static void 
 cread_add_char(char ichar, int insert, unsigned long *num, 
@@ -184,16 +184,17 @@ cread_add_char(char ichar, int insert, unsigned long *num,
 	}
 }
 
-static void 
-cread_add_str(char *str, int strsize, int insert, unsigned long *num,
-              unsigned long *eol_num, char *buf, unsigned long len)
-{
-	while (strsize--) {
-		cread_add_char(*str, insert, num, eol_num, buf, len);
-		str++;
-	}
-}
+// static void 
+// cread_add_str(char *str, int strsize, int insert, unsigned long *num,
+//               unsigned long *eol_num, char *buf, unsigned long len)
+// {
+// 	while (strsize--) {
+// 		cread_add_char(*str, insert, num, eol_num, buf, len);
+// 		str++;
+// 	}
+// }
 
+//堵塞式读取一行命令至指定数组
 static int
 cread_line(char *buf, unsigned int *len)
 {
@@ -203,15 +204,15 @@ cread_line(char *buf, unsigned int *len)
 	unsigned long wlen;
 	char ichar;
 	int insert = 1;
-	int esc_len = 0;
+	// int esc_len = 0;//转义字符长度 Escape Sequence
 	int rc = 0;
-	char esc_save[8];
+	// char esc_save[8];//转义字符缓存？？，即以'^[' ESC键起始的字符，转义字符最长为8？
 
 	while (1) {
 		rlen = 1;
-		ichar = getcmd_getch();
+		ichar = getcmd_getch();//堵塞式读取一个字符
 
-		if ((ichar == '\n') || (ichar == '\r')) {
+		if ((ichar == '\n') || (ichar == '\r')) {//每次输完命令回车后换行
 			printk("\n");
 			break;
 		}
@@ -219,172 +220,179 @@ cread_line(char *buf, unsigned int *len)
 		/*
 		 * handle standard linux xterm esc sequences for arrow key, etc.
 		 */
-		if (esc_len != 0) {
-			if (esc_len == 1) {
-				if (ichar == '[') {
-					esc_save[esc_len] = ichar;
-					esc_len = 2;
-				} else {
-					cread_add_str(esc_save, esc_len, insert,
-						      &num, &eol_num, buf, *len);
-					esc_len = 0;
-				}
-				continue;
-			}
+		// if (esc_len != 0) {
+		// 	if (esc_len == 1) {
+		// 		if (ichar == '[') {
+		// 			esc_save[esc_len] = ichar;
+		// 			esc_len = 2;
+		// 		} else {
+		// 			cread_add_str(esc_save, esc_len, insert,
+		// 				      &num, &eol_num, buf, *len);
+		// 			esc_len = 0;
+		// 		}
+		// 		continue;
+		// 	}
 
-			switch (ichar) {
+		// 	switch (ichar) {
 
-			case 'D':	/* <- key */
-				ichar = CTL_CH('b');
-				esc_len = 0;
-				break;
-			case 'C':	/* -> key */
-				ichar = CTL_CH('f');
-				esc_len = 0;
-				break;	/* pass off to ^F handler */
-			case 'H':	/* Home key */
-				ichar = CTL_CH('a');
-				esc_len = 0;
-				break;	/* pass off to ^A handler */
-			case 'A':	/* up arrow */
-				ichar = CTL_CH('p');
-				esc_len = 0;
-				break;	/* pass off to ^P handler */
-			case 'B':	/* down arrow */
-				ichar = CTL_CH('n');
-				esc_len = 0;
-				break;	/* pass off to ^N handler */
-			default:
-				esc_save[esc_len++] = ichar;
-				cread_add_str(esc_save, esc_len, insert,
-					      &num, &eol_num, buf, *len);
-				esc_len = 0;
-				continue;
-			}
-		}
+		// 	case 'D':	/* <- key 左移 */
+		// 		ichar = CTL_CH('b');
+		// 		esc_len = 0;
+		// 		break;
+
+		// 	case 'C':	/* -> key 右移 */
+		// 		ichar = CTL_CH('f');
+		// 		esc_len = 0;
+		// 		break;	/* pass off to ^F handler */
+
+		// 	case 'H':	/* Home key Home键 */
+		// 		ichar = CTL_CH('a');
+		// 		esc_len = 0;
+		// 		break;	/* pass off to ^A handler */
+
+		// 	case 'A':	/* up arrow 上移 */
+		// 		ichar = CTL_CH('p');
+		// 		esc_len = 0;
+		// 		break;	/* pass off to ^P handler */
+
+		// 	case 'B':	/* down arrow 下移 */
+		// 		ichar = CTL_CH('n');
+		// 		esc_len = 0;
+		// 		break;	/* pass off to ^N handler */
+
+		// 	default://其他转义字符
+		// 		esc_save[esc_len++] = ichar;
+		// 		cread_add_str(esc_save, esc_len, insert,
+		// 			      &num, &eol_num, buf, *len);
+		// 		esc_len = 0;
+		// 		continue;
+		// 	}
+		// }//if (esc_len != 0)
 
 		switch (ichar) {
-			case 0x1b:
-				if (esc_len == 0) {
-					esc_save[esc_len] = ichar;
-					esc_len = 1;
-				} else {
-					printk("impossible condition #876\n");
-					esc_len = 0;
-				}
-				break;
+			// case 0x1b:
+			// 	if (esc_len == 0) {
+			// 		esc_save[esc_len] = ichar;
+			// 		esc_len = 1;
+			// 	} else {
+			// 		printk("impossible condition #876\n");
+			// 		esc_len = 0;
+			// 	}
+			// 	break;
 
-			case CTL_CH('a'):
-				BEGINNING_OF_LINE();
-				break;
-			case CTL_CH('f'):
-				if (num < eol_num) {
-					getcmd_putch(buf[num]);
-					num++;
-				}
-				break;
-			case CTL_CH('b'):
-				if (num) {
-					getcmd_putch(CTL_BACKSPACE);
-					num--;
-				}
-				break;
-			case CTL_CH('d'):
-				if (num < eol_num) {
-					wlen = eol_num - num - 1;
-					if (wlen) {
-						memmove(&buf[num], &buf[num+1], wlen);
-						putnstr(buf + num, wlen);
-					}
+			// case CTL_CH('a'):
+			// 	BEGINNING_OF_LINE();
+			// 	break;
+			// case CTL_CH('f'):
+			// 	if (num < eol_num) {
+			// 		getcmd_putch(buf[num]);
+			// 		num++;
+			// 	}
+			// 	break;
+			// case CTL_CH('b'):
+			// 	if (num) {
+			// 		getcmd_putch(CTL_BACKSPACE);
+			// 		num--;
+			// 	}
+			// 	break;
+			// case CTL_CH('d'):
+			// 	if (num < eol_num) {
+			// 		wlen = eol_num - num - 1;
+			// 		if (wlen) {
+			// 			memmove(&buf[num], &buf[num+1], wlen);
+			// 			putnstr(buf + num, wlen);
+			// 		}
 
-					getcmd_putch(' ');
-					do {
-						getcmd_putch(CTL_BACKSPACE);
-					} while (wlen--);
-					eol_num--;
-				}
-				break;
-			case CTL_CH('k'):
-				ERASE_TO_EOL();
-				break;
-			case CTL_CH('e'):
-				REFRESH_TO_EOL();
-				break;
-			case CTL_CH('o'):
-				insert = !insert;
-				break;
-			case CTL_CH('x'):
-				BEGINNING_OF_LINE();
-				ERASE_TO_EOL();
-				break;
-			case DEL:
-			case DEL7:
-			case 8:
-				if (num) {
-					wlen = eol_num - num;
-					num--;
-					memmove(&buf[num], &buf[num+1], wlen);
-					getcmd_putch(CTL_BACKSPACE);
-					putnstr(buf + num, wlen);
-					getcmd_putch(' ');
-					do {
-						getcmd_putch(CTL_BACKSPACE);
-					} while (wlen--);
-					eol_num--;
-				}
-				break;
-			case CTL_CH('p'):
-			case CTL_CH('n'):
-				{
-				char * hline;
+			// 		getcmd_putch(' ');
+			// 		do {
+			// 			getcmd_putch(CTL_BACKSPACE);
+			// 		} while (wlen--);
+			// 		eol_num--;
+			// 	}
+			// 	break;
+			// case CTL_CH('k'):
+			// 	ERASE_TO_EOL();
+			// 	break;
+			// case CTL_CH('e'):
+			// 	REFRESH_TO_EOL();
+			// 	break;
+			// case CTL_CH('o'):
+			// 	insert = !insert;
+			// 	break;
+			// case CTL_CH('x'):
+			// 	BEGINNING_OF_LINE();
+			// 	ERASE_TO_EOL();
+			// 	break;
+			// case DEL:
+			// case DEL7:
+			// case 8:
+			// 	if (num) {
+			// 		wlen = eol_num - num;
+			// 		num--;
+			// 		memmove(&buf[num], &buf[num+1], wlen);
+			// 		getcmd_putch(CTL_BACKSPACE);
+			// 		putnstr(buf + num, wlen);
+			// 		getcmd_putch(' ');
+			// 		do {
+			// 			getcmd_putch(CTL_BACKSPACE);
+			// 		} while (wlen--);
+			// 		eol_num--;
+			// 	}
+			// 	break;
+			// case CTL_CH('p'):
+			// case CTL_CH('n'):
+			// 	{
+			// 	char * hline;
 
-				esc_len = 0;
+			// 	esc_len = 0;
 
-				if (ichar == CTL_CH('p'))
-					hline = hist_prev();
-				else
-					hline = hist_next();
+			// 	if (ichar == CTL_CH('p'))
+			// 		hline = hist_prev();
+			// 	else
+			// 		hline = hist_next();
 
-				if (!hline) {
-					getcmd_cbeep();
-					continue;
-				}
+			// 	if (!hline) {
+			// 		getcmd_cbeep();
+			// 		continue;
+			// 	}
 
-				/* nuke the current line */
-				/* first, go home */
-				BEGINNING_OF_LINE();
+			// 	/* nuke the current line */
+			// 	/* first, go home */
+			// 	BEGINNING_OF_LINE();
 
-				/* erase to end of line */
-				ERASE_TO_EOL();
+			// 	/* erase to end of line */
+			// 	ERASE_TO_EOL();
 
-				/* copy new line into place and display */
-				strcpy(buf, hline);
-				eol_num = strlen(buf);
-				REFRESH_TO_EOL();
-				continue;
-				}
+			// 	/* copy new line into place and display */
+			// 	strcpy(buf, hline);
+			// 	eol_num = strlen(buf);
+			// 	REFRESH_TO_EOL();
+			// 	continue;
+			// 	}
 			default:
 				cread_add_char(ichar, insert,
 					       &num, &eol_num, buf, *len);
 				break;
-		}
-	}
+		}//switch (ichar)
+	}//while(1)
 	*len = eol_num;
 	buf[eol_num] = '\0';	/* lose the newline */
 
-	if (buf[0] && buf[0] != CREAD_HIST_CHAR)
+	if (buf[0] && buf[0] != CREAD_HIST_CHAR)//不为0，不为‘!’
 		cread_add_to_hist(buf);
 	hist_cur = hist_add_idx;
 
 	return (rc);
 }
 
+
+//堵塞式获取命令
 void 
 getcmd(char *buf, unsigned int len)
 {
 	static int initted = 0;
 
-	if (!initted) {
+	if (!initted) {//初次上电才进行初始化
 		hist_init();
 		initted = 1;
 	}

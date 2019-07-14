@@ -1,5 +1,5 @@
-#define UTS_VERSION "#0.1.4 Thu Jul 11 22:21:14 CST 2019"
-#define VIVI_COMPILE_TIME "22:21:14"
+#define UTS_VERSION "#0.1.4 Sun Jul 14 17:23:06 CST 2019"
+#define VIVI_COMPILE_TIME "17:23:06"
 #define VIVI_COMPILE_BY "beta"
 #define VIVI_COMPILE_HOST "ubuntu1204x86"
 #define VIVI_COMPILE_DOMAIN ""

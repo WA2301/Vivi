@@ -24,12 +24,12 @@ char prompt[MAX_PROMPT_LEN] = CONFIG_SERIAL_TERM_PROMPT;
 
 void serial_term(void)
 {
-	char cmd_buf[MAX_CMDBUF_SIZE];
+	char cmd_buf[MAX_CMDBUF_SIZE];//命令加参数最长为256个字符
 
 	for (;;) {
 		printk("%s> ", prompt);
 
-		getcmd(cmd_buf, MAX_CMDBUF_SIZE);
+		getcmd(cmd_buf, MAX_CMDBUF_SIZE);//WA2301:堵塞式获取命令
 
 		/* execute a user command */
 		if (cmd_buf[0])
